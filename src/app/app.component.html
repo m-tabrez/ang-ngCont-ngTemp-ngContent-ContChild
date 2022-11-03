@@ -1,0 +1,17 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+<app-game-controller (increment)="getIncrementer($event)"></app-game-controller>
+
+<ng-container *ngFor="let num of nums">
+  <app-even *ngIf="num % 2 == 0 ;else oddBlock">
+    <p #evenNumber>{{num}}</p>
+  </app-even>
+  <ng-template #oddBlock>
+    <app-odd>
+      <p #oddNumber> {{num}}</p>
+    </app-odd>
+  </ng-template>
+</ng-container>
